@@ -63,7 +63,15 @@ appDeploy()
  then
  echo "pom file exists and ready to deploy"
  cd /var/lib/jenkins/workspace/Runjobthrushell
- mvn  tomcat7:deploy
+ 
+ if [ -f /opt/tomcat/webapps/SimpleWebApp.war ]
+ then
+ echo "going to redeploy"
+ mvn tomcat7:redeploy
+ else
+ echo "going to deploy"
+ mvn tomcat7:deploy
+ fi
  else
  echo "pom file does not exists please check"
  fi
