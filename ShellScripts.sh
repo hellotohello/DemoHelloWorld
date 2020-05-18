@@ -35,11 +35,11 @@ startTomcat()
  echo "tomcat is already running"
  else
  echo "tomcat is not running going to start"
- chmod 777 /opt/tomcat
- chmod 777 /opt/tomcat/bin
- chmod 777 /opt/tomcat/webapps
- chmod 777 /opt/tomcat/logs
- chmod 777 /opt/tomcat/bin/catalina.sh
+ sudo chmod 777 /opt/tomcat
+ sudo chmod 777 /opt/tomcat/bin
+ sudo chmod 777 /opt/tomcat/webapps
+ sudo chmod 777 /opt/tomcat/logs
+ sudo chmod 777 /opt/tomcat/bin/catalina.sh
  sh /opt/tomcat/bin/startup.sh
  echo "tomcat start up"
  sleep 20
