@@ -14,7 +14,7 @@ stopTomcat()
  if [ -f /opt/tomcat/bin/shutdown.sh ]
  then
  echo " file exists please start"
- # chmod 777 -R /opt/tomcat/
+ chmod 777 -R /opt/tomcat/
  sh /opt/tomcat/bin/shutdown.sh
  echo "shutdown script running"
  sleep 20
@@ -34,7 +34,7 @@ startTomcat()
  echo "tomcat is already running"
  else
  echo "tomcat is not running going to start"
- # chmod 777 -R /opt/tomcat/
+ chmod 777 -R /opt/tomcat/
  sh /opt/tomcat/bin/startup.sh
  echo "tomcat start up"
  sleep 20
