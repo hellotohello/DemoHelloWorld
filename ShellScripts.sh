@@ -12,7 +12,7 @@ stopTomcat()
  if [ -f /opt/tomcat/bin/shutdown.sh ]
  then
  echo " file exists please start"
- #chmod 777 -R /opt/tomcat/
+
 
  sh /opt/tomcat/bin/shutdown.sh
  echo "shutdown script running"
