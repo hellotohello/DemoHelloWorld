@@ -3,7 +3,7 @@ export MAVEN_HOME=/opt/maven
 export PATH=$PATH:$MAVEN_HOME/bin
 stopTomcat()
 {
- if netstat -lntp | grep 8085
+ if netstat -lntp | grep 8086
  then
  echo "tomcat is available in this server andd running"
  cd /opt/tomcat/bin
@@ -28,7 +28,7 @@ stopTomcat()
 startTomcat()
 {
  echo "checck if tomcat is running"
- if netstat -lntp | grep 8085
+ if netstat -lntp | grep 8086
  then
  echo "tomcat is already running"
  else
@@ -79,7 +79,7 @@ appDeploy()
 
 appUnDeploy()
 {
- if netstat -lntp | grep 8085
+ if netstat -lntp | grep 8086
  then
  echo "tomcat is running, can do undeploy"
  if [ -f /var/lib/jenkins/workspace/Runjobthurshell/pom.xml ]
@@ -104,7 +104,7 @@ appUnDeploy()
 
 appReDeploy()
 {
- if netstat -lntp | grep 8085
+ if netstat -lntp | grep 8086
  then
  echo "tomcat is running"
  if [ -f /var/lib/jenkins/workspace/Runjobthurshell/pom.xml ]
