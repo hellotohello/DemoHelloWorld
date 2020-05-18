@@ -1,8 +1,6 @@
 #!/bin/bash
-
 export MAVEN_HOME=/opt/maven
 export PATH=$PATH:$MAVEN_HOME/bin
-
 stopTomcat()
 {
  if netstat -lntp | grep 8085
@@ -35,7 +33,7 @@ startTomcat()
  echo "tomcat is already running"
  else
  echo "tomcat is not running going to start"
- chmod 777 -R /opt/tomcat
+ #chmod 777 -R /opt/tomcat
  sh /opt/tomcat/bin/startup.sh
  echo "tomcat start up"
  sleep 20
