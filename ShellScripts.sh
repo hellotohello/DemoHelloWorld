@@ -39,6 +39,7 @@ startTomcat()
  chmod 777 /opt/tomcat/bin
  chmod 777 /opt/tomcat/webapps
  chmod 777 /opt/tomcat/logs
+ chmod 777 /opt/tomcat/bin/catalina.sh
  sh /opt/tomcat/bin/startup.sh
  echo "tomcat start up"
  sleep 20
