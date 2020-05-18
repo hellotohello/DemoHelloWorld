@@ -123,9 +123,10 @@ stopStartTomcat()
 
 pullRepoGit()
 {
- read -p "Enter directory nName: "  myRepository
- mkdir $myRepository
- cd $myRepository
+ 
+ 
+ mkdir testrepo
+ cd testrepo
  git clone https://github.com/hellotohello/DemoHelloWorld.git
 
 }
