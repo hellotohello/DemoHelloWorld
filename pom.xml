@@ -25,8 +25,7 @@
 				<configuration> 
 					<url>http://13.58.97.41:8085/manager/text</url> 
 					<server>apache-tomcat</server> 
-					<username>admin</username>
-					<password>admin</password>
+					
 					<path>/SimpleWebApp</path> 
 				</configuration> 
 			</plugin>
