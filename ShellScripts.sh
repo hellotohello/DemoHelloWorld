@@ -59,10 +59,10 @@ appDeploy()
  startTomcat
  appBackUp
  echo "strat deploying the war file"
- if [ -f /var/lib/jenkins/workspace/Runjobthurshell/pom.xml ]
+ if [ -f /var/lib/jenkins/workspace/Runjobthrushell/pom.xml ]
  then
  echo "pom file exists and ready to deploy"
- cd /var/lib/jenkins/workspace/Runjobthurshell
+ cd /var/lib/jenkins/workspace/Runjobthrushell
  mvn  tomcat7:deploy
  else
  echo "pom file does not exists please check"
