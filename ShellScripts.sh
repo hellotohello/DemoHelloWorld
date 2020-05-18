@@ -45,7 +45,7 @@ appBackUp()
 {
  echo "inside app Back up func"
  sleep 10
- if [ -f /opt/tomcat/webapps/simpleWebApp.war ]
+ if [ -f /opt/tomcat/webapps/*.war ]
  then
  echo "file exists so please take backup"
  cp /opt/tomcat/webapps/*.war /root/myBackUp/
@@ -60,11 +60,11 @@ appDeploy()
  startTomcat
  appBackUp
  echo "strat deploying the war file"
- if [ -f /var/lib/jenkins/workspace/MySimpleWebApp/pom.xml ]
+ if [ -f /var/lib/jenkins/workspace/Runjobthurshell/pom.xml ]
  then
  echo "pom file exists and ready to deploy"
- cd /var/lib/jenkins/workspace/MySimpleWebApp
- mvn clean tomcat7:deploy
+ cd /var/lib/jenkins/workspace/Runjobthurshell
+ mvn  tomcat7:deploy
  else
  echo "pom file does not exists please check"
  fi
@@ -75,13 +75,13 @@ appUnDeploy()
  if netstat -lntp | grep 8085
  then
  echo "tomcat is running, can do undeploy"
- if [ -f /var/lib/jenkins/workspace/MySimpleWebApp/pom.xml ]
+ if [ -f /var/lib/jenkins/workspace/Runjobthurshell/pom.xml ]
  then
  echo "pom file exists doing undeploy by going to the path"
- if [ -f /opt/tomcat/webapps/simpleWebApp.war ]
+ if [ -f /opt/tomcat/webapps/*.war ]
  then 
   echo "war file exists so you can start undeploy"
- cd  /var/lib/jenkins/workspace/MySimpleWebApp/
+ cd  /var/lib/jenkins/workspace/Runjobthurshell/
  echo "going to undeploy"
  mvn tomcat7:undeploy
  else
@@ -100,10 +100,10 @@ appReDeploy()
  if netstat -lntp | grep 8085
  then
  echo "tomcat is running"
- if [ -f /var/lib/jenkins/workspace/MySimpleWebApp/pom.xml ]
+ if [ -f /var/lib/jenkins/workspace/Runjobthurshell/pom.xml ]
  then
  echo "pom file exists going to the path directory and doing redeploy"
- cd /var/lib/jenkins/workspace/MySimpleWebApp/
+ cd /var/lib/jenkins/workspace/Runjobthurshell/
  echo "going torun command  redeploy"
  mvn tomcat7:redeploy
  echo "redeploy command executed"
@@ -132,7 +132,7 @@ pullRepoGit()
 
 echo " given value $1"
  case $1 in
-         appBackUp|appDeploy|appUnDeploy|appReDeploy|startTomcat|stopTomcat)
+         appBackUp|appDeploy|appUnDeploy|appReDeploy|startTomcat|stopTomcat|pullRepoGit)
                 echo -e  " input value: appBackUp $1"
                  $1
          ;;
