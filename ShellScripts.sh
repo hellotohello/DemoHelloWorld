@@ -126,7 +126,7 @@ pullRepoGit()
  read -p "Enter directory nName: "  myRepository
  mkdir $myRepository
  cd $myRepository
- git clone https://github.com/jaganmohanakola/SimpleWebApp.git
+ git clone https://github.com/hellotohello/SimpleWebApp.git
 
 }
 
