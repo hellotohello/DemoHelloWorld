@@ -82,13 +82,13 @@ appUnDeploy()
  if netstat -lntp | grep 8086
  then
  echo "tomcat is running, can do undeploy"
- if [ -f /var/lib/jenkins/workspace/Runjobthurshell/pom.xml ]
+ if [ -f /var/lib/jenkins/workspace/Runjobthrushell/pom.xml ]
  then
  echo "pom file exists doing undeploy by going to the path"
  if [ -f /opt/tomcat/webapps/*.war ]
  then 
   echo "war file exists so you can start undeploy"
- cd  /var/lib/jenkins/workspace/Runjobthurshell/
+ cd  /var/lib/jenkins/workspace/Runjobthrushell/
  echo "going to undeploy"
  mvn tomcat7:undeploy
  else
@@ -107,10 +107,10 @@ appReDeploy()
  if netstat -lntp | grep 8086
  then
  echo "tomcat is running"
- if [ -f /var/lib/jenkins/workspace/Runjobthurshell/pom.xml ]
+ if [ -f /var/lib/jenkins/workspace/Runjobthrushell/pom.xml ]
  then
  echo "pom file exists going to the path directory and doing redeploy"
- cd /var/lib/jenkins/workspace/Runjobthurshell/
+ cd /var/lib/jenkins/workspace/Runjobthruhell/
  echo "going torun command  redeploy"
  mvn tomcat7:redeploy
  echo "redeploy command executed"
